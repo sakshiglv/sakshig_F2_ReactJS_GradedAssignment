@@ -1,0 +1,11 @@
+.favorites {
+    padding: 20px;
+}
+
+.movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    word-wrap: break-word;
+}

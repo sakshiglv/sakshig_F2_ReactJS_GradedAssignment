@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --nav-bg-color: #ffffff;
+    --text-color: #333333;
+    --hover-color: #f39c12;
+    --input-bg-color: #f0f0f0;
+    --background-color: #f5f5f5;
+    --card-bg-color: #ffffff;
+    --card-border-color: #e0e0e0;
+    --detail-overlay-color: rgba(0, 0, 0, 0.5);
+    --scrollbar-track-color: #f5f5f5;
+    --fav-icon-color: #ff6b6b;
+    --fav-icon-hover-color: #e63946;
+}
+
+body::-webkit-scrollbar {
+    width: 2px;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-color);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 0px 84px 73px rgba(247, 247, 247, 0.9);
+    -moz-box-shadow: 0px 0px 84px 73px rgba(247, 247, 247, 0.9);
+    box-shadow: 0px 0px 84px 73px rgba(247, 247, 247, 0.9);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode {
+    --nav-bg-color: #00000082;
+    --text-color: #f5f5f5;
+    --hover-color: #7C3AED;
+    --input-bg-color: #44444400;
+    --background-color: linear-gradient(90deg, #0f0c29, #302b63, #24243e);
+    --card-bg-color: #000000ec;
+    --card-border-color: #bfbfff35;
+    --detail-overlay-color: rgba(0, 0, 0, 0.5);
+    --scrollbar-track-color: #333333;
+    --fav-icon-color: #f5f5f5;
+    --movie-card-color: #00000069;
+}
+
+.light-mode {
+    --nav-bg-color: rgba(255, 255, 255, 0.311);
+    --text-color: #121212;
+    --hover-color: #03AED2;
+    --input-bg-color: #f0f0f0;
+    --background-color: linear-gradient(90deg, #f2fcfe, #97b3e7);
+    --card-bg-color: #fbf3fedc;
+    --card-border-color: #e0e0e0;
+    --detail-overlay-color: rgba(0, 0, 0, 0.5);
+    --scrollbar-track-color: #f5f5f5;
+    --fav-icon-color: #333333;
+    --movie-card-color: #ffffffc9;
+}
+
+.blur-background {
+    filter: blur(5px);
+}
+
+@media (max-width: 600px) {
+    .nav-bar {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 40px;
+        align-items: start;
+        justify-items: space-between;
+        grid-template-areas:
+            "logo theme-toggle"
+            "theaters comingSoon"
+            "topRatedIndian topRated"
+            "favorites favorites";
+    }
+
+    .theme-toggle {
+        grid-area: theme-toggle;
+    }
+
+    .search {
+        grid-area: search;
+    }
+
+    .nav-logo {
+        grid-area: logo;
+    }
+
+    .theaters {
+        grid-area: theaters;
+    }
+
+    .comingSoon {
+        grid-area: comingSoon;
+    }
+
+    .topRatedIndian {
+        grid-area: topRatedIndian;
+    }
+
+    .topRated {
+        grid-area: topRated;
+    }
+
+    .favorites {
+        grid-area: favorites;
+    }
+
+    .nav-logo {
+        padding: 14px;
+    }
+
+    .theme-toggle {
+        padding: 14px;
+    }
+
+    .movie-detail-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--detail-overlay-color);
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        z-index: 1000;
+        overflow: scroll;
+    }
+
+    .movie-detail {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 90vw;
+        border-radius: 0px;
+    }
+
+    .movie-detail img {
+        max-width: 100%;
+        max-height: 300px;
+    }
+
+    .movie-detail-info {
+        text-align: center;
+        padding: 10px;
+    }
+
+    .movie-detail-buttons {
+        top: 5px;
+        right: 5px;
+    }
+}
+
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    transition: height 0.3s ease;
+}
+
+.hero-section-small {
+    height: 24vh;
+}
+
+.hero-section h1 {
+    font-size: 64px;
+    margin-bottom: 40px;
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+
+}
